@@ -9,9 +9,6 @@ export PYESSV_WS_HOME="$( cd "$( dirname "${PYESSV_WS_HOME[0]}" )" && pwd )"
 # Set python path
 export PYTHONPATH=$PYESSV_WS_HOME:$PYTHONPATH
 
-# Set pip
-export PYESSV_WS_PIP=/Users/ipsl/Engineering/esdoc/repos/core/esdoc-errata-ws/ops/venv/bin/pip
-
 # ###############################################################
 # STANDARD-SECTION: OPERATIONS
 # ###############################################################
