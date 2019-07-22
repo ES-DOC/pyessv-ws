@@ -36,7 +36,7 @@ def _get_formatted_message(msg, module, level):
     if msg is None:
         return _NULL_MSG
 
-    return "{} [{}] :: ESDOC-PYESSV-{} :: {}".format(
+    return "{} [{}] :: PYESSV-{} :: {}".format(
         unicode(arrow.get())[0:-6],
         level,
         module,

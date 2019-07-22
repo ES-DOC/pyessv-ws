@@ -83,7 +83,7 @@ def _get_app():
 
     """
     endpoints = _get_app_endpoints()
-    log("Assigned endpoint to handler mappings")
+    log("... assigned endpoint to handler mappings")
 
     schemas.init([i[0] for i in endpoints])
     return tornado.web.Application(endpoints,
@@ -96,7 +96,7 @@ def run():
 
     """
     # Initialize application.
-    log("Initializing")
+    log("Initializing:")
     app = _get_app()
 
     # Open port.
