@@ -1,0 +1,31 @@
+# ###############################################################
+# STANDARD-SECTION: SETUP
+# ###############################################################
+
+# Set home path
+export PYESSV_WS_HOME="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+export PYESSV_WS_HOME="$( cd "$( dirname "${PYESSV_WS_HOME[0]}" )" && pwd )"
+
+# Set python path
+export PYTHONPATH=$PYESSV_WS_HOME:$PYTHONPATH
+
+# Set pip
+export PYESSV_WS_PIP=/Users/ipsl/Engineering/esdoc/repos/core/esdoc-errata-ws/ops/venv/bin/pip
+
+# ###############################################################
+# STANDARD-SECTION: OPERATIONS
+# ###############################################################
+
+# Ensure shell scripts are executable.
+chmod a+x $PYESSV_WS_HOME/sh/*.sh
+
+# ###############################################################
+# STANDARD-SECTION: ALIASES
+# ###############################################################
+
+alias pyessv-ws=$PYESSV_WS_HOME/sh/run.sh
+alias pyessv-ws-install=$PYESSV_WS_HOME/sh/install.sh
+alias pyessv-ws-daemon=$PYESSV_WS_HOME/sh/daemon_start.sh
+alias pyessv-ws-daemon-stop=$PYESSV_WS_HOME/sh/daemon_stop.sh
+alias pyessv-ws-daemon-reload=$PYESSV_WS_HOME/sh/daemon_reload.sh
+alias pyessv-ws-daemon-status=$PYESSV_WS_HOME/sh/daemon_status.sh

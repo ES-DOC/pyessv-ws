@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Wraps standard echo by adding application prefix.
+log()
+{
+	declare now=`date +%Y-%m-%dT%H:%M:%S:000000`
+	declare tabs=''
+	if [ "$1" ]; then
+		if [ "$2" ]; then
+			for ((i=0; i<$2; i++))
+			do
+				declare tabs+='\t'
+			done
+	    	echo -e $now" [INFO] :: PYESSV-WS :: "$tabs$1
+	    else
+	    	echo -e $now" [INFO] :: PYESSV-WS :: "$1
+	    fi
+	else
+	    echo -e $now" [INFO] :: PYESSV-WS :: "
+	fi
+}
