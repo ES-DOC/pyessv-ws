@@ -15,6 +15,7 @@ import datetime as dt
 import tornado
 
 import pyessv
+import pyessv_ws
 from pyessv_ws.utils.http import process_request
 
 
@@ -32,7 +33,7 @@ class HeartbeatRequestHandler(tornado.web.RequestHandler):
 
             """
             self.output = {
-                "message": "ES-DOC PYESSV web service is operational @ {}".format(dt.datetime.utcnow()),
+                "message": "ES-DOC PYESSV web service (v{}) is operational @ {}".format(pyessv_ws.__version__, dt.datetime.utcnow()),
             }
 
         # Process request.
