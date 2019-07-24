@@ -40,7 +40,7 @@ def _get_config_fpath(config_path):
     """Returns configuration file path.
 
     """
-    path = os.getenv('PYESSV_LIB_HOME')
+    path = os.getenv('PYESSV_WS_HOME')
     if path is not None:
         path = os.path.join(path, "ops/config")
         path = os.path.join(path, _CONFIG_FPATH)
