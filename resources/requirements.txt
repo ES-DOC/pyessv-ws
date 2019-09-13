@@ -1,4 +1,3 @@
-arrow
 jsonschema
 tornado
 pyessv

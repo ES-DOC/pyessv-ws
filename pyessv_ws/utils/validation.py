@@ -10,10 +10,10 @@
 .. moduleauthor:: Mark Conway-Greenslade <momipsl@ipsl.jussieu.fr>
 
 """
-import arrow
 import requests
 import pyessv
 
+from pyessv.utils import compat
 from pyessv_ws.utils import config
 from pyessv_ws.utils import exceptions
 
@@ -106,12 +106,12 @@ def validate_date(val, var, date_format=None):
         raise ValueError('{0} is undefined date'.format(var))
 
     try:
-        if date_format is not None:
-            arrow.get(val, date_format)
-        else:
-            arrow.get(val)
-    except arrow.parser.ParserError:
+        parsed = compat.to_datetime(val)
+    except (TypeError, ValueError):
         _raise_value_error(val, var, 'date')
+    else:
+        if parsed is None:
+            _raise_value_error(val, var, 'date')
 
 
 def validate_str(val, var):
