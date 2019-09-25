@@ -95,6 +95,9 @@ def run():
     """Runs web service.
 
     """
+    # Log pyessv location.
+    log("Loaded pyessv @ {}".format(pyessv.__file__))
+
     # Initialize application.
     log("Initializing:")
     app = _get_app()

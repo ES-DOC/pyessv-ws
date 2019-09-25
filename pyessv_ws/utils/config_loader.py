@@ -57,7 +57,7 @@ def _init():
     fpath = _get_config_fpath('ws.conf')
     if fpath is not None:
         data = json_file_to_namedtuple(fpath)
-        logger.log_web("Config file loaded @ {}".format(fpath))
+        logger.log_web("Loaded config @ {}".format(fpath))
     else:
         logger.log_web_warning("Web-service config file not found: reverted to default")
 

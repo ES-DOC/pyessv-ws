@@ -6,9 +6,6 @@
 export PYESSV_WS_HOME="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 export PYESSV_WS_HOME="$( cd "$( dirname "${PYESSV_WS_HOME[0]}" )" && pwd )"
 
-# Set python path
-export PYTHONPATH=$PYESSV_WS_HOME:$PYTHONPATH
-
 # ###############################################################
 # STANDARD-SECTION: OPERATIONS
 # ###############################################################
