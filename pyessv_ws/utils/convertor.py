@@ -27,7 +27,8 @@ _DEFAULT_SEPARATOR = "_"
 # Set of db coumns that are ignored when converting db entity instances.
 _IGNORED_DB_COLUMNS = {'id', 'row_create_date', 'row_update_date'}
 
-_DEFAULT_KEY_CONVERTOR = lambda k: k
+# Default dictionary key convertor.
+_DEFAULT_KEY_CONVERTOR = lambda k: str(k)
 
 def to_dict(data, key_convertor=_DEFAULT_KEY_CONVERTOR):
     """Converts input data to a dictionary.
@@ -49,7 +50,7 @@ def to_dict(data, key_convertor=_DEFAULT_KEY_CONVERTOR):
 
     # Dictionaries.
     elif isinstance(data, collections.abc.Mapping):
-        return { str(key_convertor(k)): to_dict(v, key_convertor) for k, v in iter(data.items()) }
+        return { key_convertor(k): to_dict(v, key_convertor) for k, v in iter(data.items()) }
 
     # Collections.
     elif isinstance(data, collections.abc.Iterable):
