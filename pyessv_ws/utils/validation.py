@@ -130,22 +130,6 @@ def validate_str(val, var):
         raise ValueError('{0} is empty string'.format(var))
 
 
-def validate_unicode(val, var):
-    """Validates a unicode.
-
-    """
-    if val is None:
-        raise ValueError('{0} is undefined unicode'.format(var))
-
-    try:
-        val = unicode(val)
-    except ValueError:
-        _raise_value_error(val, var, unicode)
-
-    if not len(val):
-        raise ValueError('{0} is empty unicode'.format(var))
-
-
 def validate_iterable(val, var):
     """Validates an iterable.
 

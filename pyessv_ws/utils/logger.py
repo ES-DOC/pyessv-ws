@@ -37,10 +37,10 @@ def _get_formatted_message(msg, module, level):
         return _NULL_MSG
 
     return "{} [{}] :: PYESSV-{} :: {}".format(
-        unicode(dt.datetime.utcnow())[0:-7],
+        str(dt.datetime.utcnow())[0:-7],
         level,
         module,
-        unicode(msg).strip()
+        str(msg).strip()
         )
 
 

@@ -10,9 +10,9 @@
 
 """
 import os
-import logger
 import json
 
+from pyessv_ws.utils import logger
 from pyessv_ws.utils.constants import HTTP_RESPONSE_SERVER_ERROR
 from pyessv_ws.utils.convertor import json_file_to_namedtuple
 from pyessv_ws.utils.convertor import to_namedtuple

@@ -11,7 +11,7 @@
 
 """
 __title__ = 'pyessv-ws'
-__version__ = '0.1.0.0'
+__version__ = '1.0.0.0'
 __author__ = 'ES-DOC'
 __license__ = 'GPL'
 __copyright__ = 'Copyright 2019 ES-DOC'
