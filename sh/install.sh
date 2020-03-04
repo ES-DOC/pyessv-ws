@@ -34,6 +34,7 @@ _install_venv()
     # ... install venv using system pip.
     pip2 install --upgrade pip
     pip2 install --upgrade virtualenv
+    pip2 install --upgrade pipenv
     virtualenv $PYESSV_WS_HOME/ops/venv
 
     # ... install dependencies.

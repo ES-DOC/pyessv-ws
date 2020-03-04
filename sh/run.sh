@@ -6,8 +6,8 @@ source $PYESSV_WS_HOME/sh/utils.sh
 # Main entry point.
 main()
 {
-	source $PYESSV_WS_HOME/sh/activate_venv.sh
-	python $PYESSV_WS_HOME/sh/run.py
+	pushd $PYESSV_WS_HOME
+	pipenv run python $PYESSV_WS_HOME/sh/run.py
 }
 
 # Invoke entry point.

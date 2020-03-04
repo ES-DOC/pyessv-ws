@@ -67,7 +67,11 @@ def _validate_request_params(handler):
 
     # Validate request parameters.
     else:
-        _validate(handler, handler.request.query_arguments, schema)
+        # ... decode strings values.
+        query_arguments = {k: [i.decode() for i in v] for k, v in handler.request.query_arguments.items()}
+
+        # ... validate.
+        _validate(handler, query_arguments, schema)
 
 
 def _validate_request_body(handler):

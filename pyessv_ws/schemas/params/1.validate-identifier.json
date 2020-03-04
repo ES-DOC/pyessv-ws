@@ -1,15 +1,7 @@
 {
     "$schema": "http://json-schema.org/schema#",
-    "additionalProperties": false,
+    "additionalProperties": true,
     "properties": {
-        "identifier": {
-            "items": {
-                "minItems": 1,
-                "maxItems": 1,
-                "type": "string"
-            },
-            "type": "array"
-        },
         "identifierType": {
             "items": {
                 "enum": [
@@ -38,7 +30,6 @@
         }
     },
     "required": [
-        "identifier",
         "identifierType",
         "project"
     ],

@@ -62,9 +62,7 @@ class RetrieveRequestHandler(tornado.web.RequestHandler):
 
 
         # Process request.
-        process_request(self, [
-            _set_output
-            ])
+        process_request(self, [_set_output])
 
 
 def _encode(node, include_meta):

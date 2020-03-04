@@ -94,15 +94,19 @@ def _write_csv(handler, data):
     """
     handler.write(data)
     handler.set_header("Content-Type", "application/csv; charset=utf-8")
+    handler.set_header("X-Content-Type-Options", "nosniff")
 
 
 def _write_json(handler, data):
     """Writes HTTP response JSON data.
 
     """
+    print(123)
     data['pyessvVersion'] = pyessv.__version__
     handler.write(to_dict(data, to_camel_case))
     handler.set_header("Content-Type", "application/json; charset=utf-8")
+    handler.set_header("X-Content-Type-Options", "nosniff")
+    handler.set_header("X-Frame-Options", "deny")
 
 
 def _write_html(handler, data):
@@ -111,6 +115,7 @@ def _write_html(handler, data):
     """
     handler.write(data)
     handler.set_header("Content-Type", "text/html; charset=utf-8")
+    handler.set_header("X-Content-Type-Options", "nosniff")
 
 
 def _write_pdf(handler, data):
@@ -119,6 +124,7 @@ def _write_pdf(handler, data):
     """
     handler.write(data)
     handler.set_header("Content-Type", "application/pdf; charset=utf-8")
+    handler.set_header("X-Content-Type-Options", "nosniff")
 
 
 def _write_xml(handler, data):
@@ -127,6 +133,7 @@ def _write_xml(handler, data):
     """
     handler.write(data)
     handler.set_header("Content-Type", "application/xml; charset=utf-8")
+    handler.set_header("X-Content-Type-Options", "nosniff")
 
 
 # Map of response writers to encodings.
@@ -147,8 +154,11 @@ def _write(handler, data, encoding='json'):
     # Log begin.
     _log(handler, "response writing begins --> {}".format(handler))
 
+    # Set writer.
+    writer = _WRITERS[encoding]
+
     # Write.
-    _WRITERS[encoding](handler, data)
+    writer(handler, data)
 
     # Log end.
     _log(handler, "response writing ends --> {}".format(handler))
