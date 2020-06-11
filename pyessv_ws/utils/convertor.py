@@ -30,6 +30,8 @@ _IGNORED_DB_COLUMNS = {'id', 'row_create_date', 'row_update_date'}
 # Default dictionary key convertor.
 _DEFAULT_KEY_CONVERTOR = lambda k: str(k)
 
+
+
 def to_dict(data, key_convertor=_DEFAULT_KEY_CONVERTOR):
     """Converts input data to a dictionary.
 

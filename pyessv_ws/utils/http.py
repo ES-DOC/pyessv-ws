@@ -101,7 +101,6 @@ def _write_json(handler, data):
     """Writes HTTP response JSON data.
 
     """
-    print(123)
     data['pyessvVersion'] = pyessv.__version__
     handler.write(to_dict(data, to_camel_case))
     handler.set_header("Content-Type", "application/json; charset=utf-8")

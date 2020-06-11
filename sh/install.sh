@@ -31,18 +31,14 @@ _install_venv()
 {
     log "installing virtual environment ..."
 
-    # ... install venv using system pip.
+    # Update pip / pipenv to latest versions.
     pip2 install --upgrade pip
-    pip2 install --upgrade virtualenv
     pip2 install --upgrade pipenv
-    virtualenv $PYESSV_WS_HOME/ops/venv
 
-    # ... install dependencies.
-    source $PYESSV_WS_HOME/sh/activate_venv.sh
-    pip2 install --upgrade pip
-    pip2 install --upgrade --no-cache-dir -I -r $PYESSV_WS_HOME/resources/requirements.txt
+	# Install venv using pip env.
+	pushd $PYESSV_WS_HOME
+	pipenv install
 
-    deactivate
 	log "virtual environment installed"
 }
 
