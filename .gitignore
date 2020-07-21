@@ -21,3 +21,4 @@ tmp.ipynb
 tmp
 /ops
 *.lock
+.python-version

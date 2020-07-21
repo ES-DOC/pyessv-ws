@@ -17,7 +17,7 @@ chmod a+x $PYESSV_WS_HOME/sh/*.sh
 # STANDARD-SECTION: ALIASES
 # ###############################################################
 
-alias pyessv-ws=$PYESSV_WS_HOME/sh/run.sh
+alias pyessv-ws=$PYESSV_WS_HOME/sh/app_run.sh
 alias pyessv-ws-install=$PYESSV_WS_HOME/sh/install.sh
 alias pyessv-ws-daemon=$PYESSV_WS_HOME/sh/daemon_start.sh
 alias pyessv-ws-daemon-stop=$PYESSV_WS_HOME/sh/daemon_stop.sh

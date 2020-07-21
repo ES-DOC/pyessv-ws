@@ -7,7 +7,7 @@ source $PYESSV_WS_HOME/sh/utils.sh
 main()
 {
 	pushd $PYESSV_WS_HOME
-	pipenv run python $PYESSV_WS_HOME/sh/run.py
+	pipenv run python $PYESSV_WS_HOME/sh/app_run.py
 }
 
 # Invoke entry point.
