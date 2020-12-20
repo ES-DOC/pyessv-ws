@@ -9,6 +9,7 @@ verify_ssl = true
 jsonschema = "*"
 tornado = "*"
 pyessv = "*"
+supervisor = "*"
 
 [requires]
-python_version = "3"
+python_version = "3.9.0"
