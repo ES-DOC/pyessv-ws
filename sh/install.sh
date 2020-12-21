@@ -29,9 +29,9 @@ _install_config()
 
 _install_venv()
 {
-    log "installing virtual environment ..."
-
 	pushd $PYESSV_WS_HOME
+
+    log "installing virtual environment ..."
 
     # Update pip / pipenv to latest versions.
     pip3 install --upgrade pip
@@ -41,6 +41,8 @@ _install_venv()
 	pipenv install
 
 	log "virtual environment installed"
+
+	popd
 }
 
 # Invoke entry point.
