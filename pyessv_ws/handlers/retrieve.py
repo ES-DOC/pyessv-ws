@@ -34,7 +34,8 @@ class RetrieveRequestHandler(tornado.web.RequestHandler):
 
         """
         self.set_header(constants.HTTP_HEADER_Access_Control_Allow_Origin, "*")
-
+        self.set_header(constants.HTTP_HEADER_Access_Control_Allow_Headers, "x-requested-with")
+        self.set_header(constants.HTTP_HEADER_Access_Control_Allow_Methods, 'POST, GET, OPTIONS')
 
     def get(self):
         """HTTP GET handler.
@@ -63,6 +64,14 @@ class RetrieveRequestHandler(tornado.web.RequestHandler):
 
         # Process request.
         process_request(self, [_set_output])
+
+
+    def options(self, *args):
+        """HTTP OPTIONS handler.
+
+        """        
+        self.set_status(204)
+        self.finish()
 
 
 def _encode(node, include_meta):

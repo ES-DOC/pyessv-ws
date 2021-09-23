@@ -13,7 +13,9 @@
 # Default endpoint.
 DEFAULT_ENDPOINT = r'/1/retrieve'
 
-# HTTP CORS header.
+# HTTP CORS headers.
+HTTP_HEADER_Access_Control_Allow_Headers = "Access-Control-Allow-Headers"
+HTTP_HEADER_Access_Control_Allow_Methods = "Access-Control-Allow-Methods"
 HTTP_HEADER_Access_Control_Allow_Origin = "Access-Control-Allow-Origin"
 
 # Processing error HTTP response codes.
