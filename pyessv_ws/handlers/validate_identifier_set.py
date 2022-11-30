@@ -10,7 +10,6 @@
 
 
 """
-import datetime as dt
 
 import tornado
 
